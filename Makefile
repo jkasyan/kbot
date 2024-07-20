@@ -18,6 +18,7 @@ get:
 	go get
 
 build: format get
+	@echo "OS ---> ${OS}"
 	CGO_ENABLED=0 GOOS=${OS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/JKasyan/cmd.appVersion=${VERSION}
 
 linux:
@@ -42,3 +43,10 @@ push:
 clean:
 	@echo "remove image with tag: ${IMAGE_ID}"
 	docker rmi $(shell docker images | grep ${IMAGE_ID} | awk '{print $$3}')
+
+commit_and_tag:
+	@git add .
+	@git commit -m "Build version ${VERSION}"
+	@git tag -a "${VERSION}" -m "Version ${VERSION}"
+	@git push origin main
+	@git push origin "${VERSION}"

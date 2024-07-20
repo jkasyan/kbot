@@ -2,7 +2,7 @@ FROM quay.io/projectquay/golang:1.20 as builder
 WORKDIR /go/src/app
 COPY . .
 #TODO: fix default OS
-RUN make build OS="linux" 
+RUN make linux
 
 FROM scratch
 WORKDIR /
