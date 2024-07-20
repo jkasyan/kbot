@@ -4,5 +4,6 @@ go build -ldflags "-X="github.com/JKasyan/cmd.appVersion=v1.0.0
 
 TASK 3.5
 git tag -a v1.0.0 -m "Version 1"
+git push origin tag v1.0.3
 git describe --tags --abbrev=0
 git rev-parse --short HEAD
