@@ -48,5 +48,3 @@ commit_and_tag:
 	@git add .
 	@git commit -m "Build version ${VERSION}"
 	@git tag -a "${VERSION}" -m "Version ${VERSION}"
-	@git push origin main
-	@git push origin "${VERSION}"
