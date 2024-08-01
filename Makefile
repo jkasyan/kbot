@@ -1,4 +1,4 @@
-APP=$(shell basename $(shell git remote get-url origin))
+APP=kbot
 REGISTRY=ekasyan
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETARCH=$(shell dpkg --print-architecture)
@@ -33,6 +33,7 @@ macos:
 windows:
 	$(MAKE) build OS=windows
 
+# TODO: image tag ??? v1.0.4-47c6f54-7cbdc75-ce55add-amd64
 image:
 	@echo "tag: ${IMAGE_TAG}"
 	docker build -t ${IMAGE_TAG} . 
@@ -43,8 +44,3 @@ push:
 clean:
 	@echo "remove image with tag: ${IMAGE_ID}"
 	docker rmi $(shell docker images | grep ${IMAGE_ID} | awk '{print $$3}')
-
-commit_and_tag:
-	@git add .
-	@git commit -m "Build version ${VERSION}"
-	@git tag -a "${VERSION}" -m "Version ${VERSION}"

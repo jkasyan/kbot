@@ -7,3 +7,15 @@ git tag -a v1.0.0 -m "Version 1"
 git push origin tag v1.0.3
 git describe --tags --abbrev=0
 git rev-parse --short HEAD
+
+#
+#
+#
+HELM + KUBERNETES
+#
+#
+#
+
+k create secret generic token --from-literal=TELE_TOKEN={{token}}
+helm template kbot ./helm
+helm install kbot ./helm
