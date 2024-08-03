@@ -4,7 +4,8 @@
 
 replicaCount: 1
 image:
-  repository: ekasyan
+  repository: ghcr.io
+  user: jkasyan
   tag: "v1.0.6-92f5c78"
   arch: amd64
 secret:

@@ -37,7 +37,7 @@ spec:
       {{/*   TODO: Release.Name     */}}
         - name: {{ .Chart.Name }}
 {{/*      TODO:    #  ekasyan/kbot.git/helm:v1.0.1-b82a815-amd64 */}}
-          image: "{{ .Values.image.repository }}/{{ .Chart.Name }}:{{ .Values.image.tag }}-{{ .Values.image.arch | default "amd64"}}"
+          image: "{{ .Values.image.repository }}/{{ .Values.image.user }}/{{ .Chart.Name }}:{{ .Values.image.tag }}-{{ .Values.image.arch | default "amd64"}}"
           volumeMounts:
             - mountPath: /dev/mem
               name: dev-mem
