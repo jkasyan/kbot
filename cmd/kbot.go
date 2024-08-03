@@ -46,6 +46,7 @@ to quickly create a Cobra application.`,
 		commands := []telebot.Command{
 			{Text: "/help", Description: "List available commands"},
 			{Text: "/hello", Description: "Say hello"},
+			{Text: "/time", Description: "Show current UTC time"},
 		}
 		kbot.SetCommands(commands)
 
