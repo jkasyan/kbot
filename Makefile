@@ -1,6 +1,6 @@
 APP=kbot
 REPOSITORY=ghcr.io
-REGISTRY=JKasyan
+REGISTRY=ekasyan
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETARCH=$(shell dpkg --print-architecture)
 IMAGE_ID=${VERSION}-${TARGETARCH}
