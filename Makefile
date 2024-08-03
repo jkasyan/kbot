@@ -1,5 +1,6 @@
 APP=kbot
-REGISTRY=ekasyan
+REPOSITORY=ghcr.io
+REGISTRY=JKasyan
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETARCH=$(shell dpkg --print-architecture)
 IMAGE_ID=${VERSION}-${TARGETARCH}
@@ -39,7 +40,8 @@ image:
 	docker build -t ${IMAGE_TAG} . 
 
 push:
-	docker push ${IMAGE_TAG}
+#   docker push ghcr.io/JKasyan/kbot:v1.0.0-106879e-linux-amd64 TODO: ??
+	docker push "${REPOSITORY}/${IMAGE_TAG}"
 
 clean:
 	@echo "remove image with tag: ${IMAGE_ID}"
