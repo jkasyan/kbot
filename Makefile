@@ -1,10 +1,10 @@
 APP=kbot
 REPOSITORY=ghcr.io
-REGISTRY=ekasyan
+USERNAME=jkasyan # TODO: env var ???
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETARCH=$(shell dpkg --print-architecture)
 IMAGE_ID=${VERSION}-${TARGETARCH}
-IMAGE_TAG=${REGISTRY}/${APP}:${IMAGE_ID}
+IMAGE_TAG=${REPOSITORY}/${USERNAME}/${APP}:${IMAGE_ID}
 
 format:
 	gofmt -s -w ./
@@ -40,8 +40,8 @@ image:
 	docker build -t ${IMAGE_TAG} . 
 
 push:
-#   docker push ghcr.io/JKasyan/kbot:v1.0.0-106879e-linux-amd64 TODO: ??
-	docker push "${REPOSITORY}/${IMAGE_TAG}"
+    @echo "tag: ${IMAGE_TAG}"
+	docker push ${IMAGE_TAG}
 
 clean:
 	@echo "remove image with tag: ${IMAGE_ID}"
