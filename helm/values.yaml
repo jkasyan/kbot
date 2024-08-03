@@ -3,12 +3,10 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 image:
   repository: ekasyan
-  tag: "v1.0.4-47c6f54-7cbdc75-ce55add"
+  tag: "v1.0.5-703dd3e"
   arch: amd64
-
 secret:
   name: TELE_TOKEN
   tokenName: token
