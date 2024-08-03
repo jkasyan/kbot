@@ -67,6 +67,8 @@ to quickly create a Cobra application.`,
 					res += fmt.Sprintf("%s - %s\n", c.Text, c.Description)
 				}
 				return c.Send(res)
+			case "/time":
+				return c.Send(time.Now())
 			default:
 				log.Println("unknown case: ", text)
 				return c.Send(fmt.Sprintf("Unknown command %s", text))
