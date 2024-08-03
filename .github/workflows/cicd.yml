@@ -23,7 +23,6 @@ jobs:
       # TODO: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u jkasyan --password-stdin
       - name: Docker ghcr.io login
         uses: docker/login-action@v2
-        run:
         with:
           registry: https://ghcr.io
           username: ${{ github.actor }}
