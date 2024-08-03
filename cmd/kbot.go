@@ -47,7 +47,7 @@ to quickly create a Cobra application.`,
 			{Text: "/help", Description: "List available commands"},
 			{Text: "/hello", Description: "Say hello"},
 			{Text: "/time", Description: "Show current UTC time"},
-			{Text: "/ping", Description: "Ping"},
+			//{Text: "/ping", Description: "Ping"},
 		}
 		kbot.SetCommands(commands)
 
@@ -71,8 +71,8 @@ to quickly create a Cobra application.`,
 				return c.Send(res)
 			case "/time":
 				return c.Send(time.Now().Format("2006-01-02 15:04:05"))
-			case "/ping":
-				return c.Send("pong")
+			//case "/ping":
+			//	return c.Send("pong")
 			default:
 				log.Println("unknown case: ", text)
 				return c.Send(fmt.Sprintf("Unknown command %s", text))
