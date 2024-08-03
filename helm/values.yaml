@@ -8,6 +8,7 @@ image:
   user: jkasyan
   tag: "v1.0.7-ca50aaf"
   arch: amd64
+  os: "linux"
 secret:
   name: TELE_TOKEN
   tokenName: token
