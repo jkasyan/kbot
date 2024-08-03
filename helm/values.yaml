@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   repository: ghcr.io
   user: jkasyan
-  tag: "v1.0.7-941a661"
+  tag: "v1.0.7-61405df"
   arch: amd64
 secret:
   name: TELE_TOKEN
