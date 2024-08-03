@@ -69,7 +69,7 @@ to quickly create a Cobra application.`,
 				}
 				return c.Send(res)
 			case "/time":
-				return c.Send(time.Now())
+				return c.Send(time.Now().Format("2006-01-02 15:04:05"))
 			default:
 				log.Println("unknown case: ", text)
 				return c.Send(fmt.Sprintf("Unknown command %s", text))
