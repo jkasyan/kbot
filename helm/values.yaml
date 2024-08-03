@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   repository: ghcr.io
   user: jkasyan
-  tag: "v1.0.7-ca50aaf"
+  tag: "v1.0.7-3d124c7"
   arch: amd64
   os: "linux"
 secret:
