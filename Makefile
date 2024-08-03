@@ -4,7 +4,8 @@ REPOSITORY=ghcr.io
 USERNAME=jkasyan
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETARCH=$(shell dpkg --print-architecture)
-IMAGE_ID=${VERSION}-${TARGETARCH}
+OS=$(shell uname -s | tr '[:upper:]' '[:lower:]')
+IMAGE_ID=${VERSION}-${OS}-${TARGETARCH}
 IMAGE_TAG=${REPOSITORY}/${USERNAME}/${APP}:${IMAGE_ID}
 
 format:
@@ -35,7 +36,6 @@ macos:
 windows:
 	$(MAKE) build OS=windows
 
-# TODO: image tag ??? v1.0.4-47c6f54-7cbdc75-ce55add-amd64
 image:
 	@echo "tag: ${IMAGE_TAG}"
 	docker build -t ${IMAGE_TAG} . 
