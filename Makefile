@@ -1,6 +1,7 @@
 APP=kbot
 REPOSITORY=ghcr.io
-USERNAME=jkasyan # TODO: env var ???
+ # TODO: env var ???
+USERNAME=jkasyan
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETARCH=$(shell dpkg --print-architecture)
 IMAGE_ID=${VERSION}-${TARGETARCH}
