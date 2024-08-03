@@ -40,7 +40,7 @@ image:
 	docker build -t ${IMAGE_TAG} . 
 
 push:
-    @echo "tag: ${IMAGE_TAG}"
+	@echo "tag: ${IMAGE_TAG}"
 	docker push ${IMAGE_TAG}
 
 clean:
