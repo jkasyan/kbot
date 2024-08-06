@@ -5,10 +5,10 @@ pipeline {
         BRANCH="develop"
     }
 
-    //parameters {
-    //choice(name: 'OS', choices: ['linux', 'darwin', 'windows', 'all'], description: 'Pick OS')
-
-    //}
+    parameters {
+        choice(name: 'OS', choices: ['linux', 'darwin', 'windows', 'all'], description: 'Pick OS')
+        choice(name: 'ARCH', choices: ['amd64', 'x86_64', 'i686', 'armv7l'], description: 'Pick ARCH')
+    }
 
     stages {
         stage('clone') {
