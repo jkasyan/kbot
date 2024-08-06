@@ -1,7 +1,7 @@
 APP=kbot
-REPOSITORY=ghcr.io
+REPOSITORY=docker.io
  # TODO: env var ???
-USERNAME=jkasyan
+USERNAME=ekasyan
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETARCH=$(shell dpkg --print-architecture)
 OS=$(shell uname -s | tr '[:upper:]' '[:lower:]')
