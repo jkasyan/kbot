@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: ekasyan
-  tag: "v1.0.5-2d4066e"
+  tag: "v1.0.5-619063f"
   arch: amd64
 secret:
   name: TELE_TOKEN
