@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/spf13/cobra"
@@ -69,6 +70,8 @@ to quickly create a Cobra application.`,
 				return c.Send(res)
 			case "/time":
 				return c.Send(time.Now().Format("2006-01-02T15:04:05"))
+			case "/timestamp":
+				return c.Send(strconv.Itoa(time.Now().Second()))
 			default:
 				log.Println("unknown case: ", text)
 				return c.Send(fmt.Sprintf("Unknown command %s", text))
