@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: ekasyan
-  tag: "v1.0.5-790dd51"
+  tag: "v1.0.5-4bc2baa"
   arch: amd64
 secret:
   name: token
