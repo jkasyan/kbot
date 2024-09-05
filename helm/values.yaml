@@ -8,6 +8,6 @@ image:
   tag: "v1.0.5-1a29ed6"
   arch: amd64
 secret:
-  name: TELE_TOKEN
+  name: token
   tokenName: token
-  tokenKey: TELE_TOKEN
+  tokenKey: token
