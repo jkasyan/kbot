@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	TeleToken  = os.Getenv("TELE_TOKEN")
+	TeleToken  = os.Getenv("token")
 	apiVersion = "v1.0.0"
 )
 
