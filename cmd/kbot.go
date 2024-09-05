@@ -71,7 +71,7 @@ to quickly create a Cobra application.`,
 			case "/time":
 				return c.Send(time.Now().Format("2006-01-02T15:04:05"))
 			case "/timestamp":
-				return c.Send("timestamp ~: " + strconv.Itoa(time.Now().Second()))
+				return c.Send("timestamp ~~~~: " + strconv.Itoa(time.Now().Second()))
 			default:
 				log.Println("unknown case: ", text)
 				return c.Send(fmt.Sprintf("Unknown command %s", text))
